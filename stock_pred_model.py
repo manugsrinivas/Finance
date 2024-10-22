@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stock Pred Model.ipynb
-
-
-
-
-
+"""
 Stock prediction model: the goal is to create a predictive algorithim that can predict next days prices using the data from the last week's worth of close prices. Over time I shifted emphasis to accurately being able to predict trends of the market and the direction the stock is expected to go.
 """
 
