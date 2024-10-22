@@ -29,7 +29,7 @@ today = dt.date.today()
 #todays date 2 years ago
 twoyrstart = today - dt.timedelta(days=730)
 
-#stock parameters - my api key access only gives me 2 yrs of historical stock data from today
+#stock parameters - my api key access only gives me 2 yrs of historical stock data from present day
 stock = 'SPY'
 start = twoyrstart
 end = today
@@ -68,7 +68,7 @@ linear_reg_predictions = linear_reg_model.predict(x_test)
 random_forest_predictions = random_forest_model.predict(x_test)
 
 #prediction graphing
-plt.figure(figsize=(20, 12))
+plt.figure(figsize=(15, 5))
 plt.scatter(y_test.index, linear_reg_predictions, label='Linear Regression Predictions', alpha=0.85)
 plt.scatter(y_test.index, random_forest_predictions, label='Random Forest Predictions', alpha=0.85)
 plt.xlabel('Date')
@@ -80,7 +80,7 @@ plt.tight_layout()
 plt.show()
 
 #graphing actual closing price
-plt.figure(figsize=(20, 12))
+plt.figure(figsize=(15, 5))
 plt.scatter(data.index, data['close_price'], label='Close Price', alpha=0.85)
 plt.xlabel('Date')
 plt.ylabel('Close Price')
@@ -113,6 +113,7 @@ print(f"LinearRegression Prediction for the {next_day_date} closing price:", nex
 today_real_price = data['close_price'].iloc[-1]
 print(f'todays real {stock} stock price is {today_real_price}')
 
+
 """Accuracry metrics"""
 
 #linear regression model
@@ -139,7 +140,7 @@ print("RMSE:", random_forest_rmse)
 print("R-squared:", random_forest_r2)
 print("MAE:", random_forest_mae)
 
-#dataframe to store actual and predicted values
+#store actual and predicted values
 comparison_df = pd.DataFrame({'Actual': y_test,
                                'Linear Regression Prediction': linear_reg_predictions,
                                'Random Forest Prediction': random_forest_predictions},
@@ -149,5 +150,7 @@ comparison_df = pd.DataFrame({'Actual': y_test,
 comparison_df['Linear Regression Difference'] = comparison_df['Actual'] - comparison_df['Linear Regression Prediction']
 comparison_df['Random Forest Difference'] = comparison_df['Actual'] - comparison_df['Random Forest Prediction']
 
-#comparison dataframe
+#comparison
 print(comparison_df)
+
+
