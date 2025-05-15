@@ -3,13 +3,13 @@
 
 This repository contains a time-series prediction project that uses machine learning to forecast next-day stock prices based on the past week's closing price data. Initially centered on accurately predicting the next day's numerical price, the project's focus evolved toward predicting broader market trends and directional movements of stock prices. The model leverages historical daily price data collected via the Polygon.io API and implements both regression modeling and trend analysis for evaluation.
 
-## 📈 Project Description
+## Project Description
 
 The dataset was obtained through the Polygon.io API, which provided two years' worth of daily trading data for a selected stock (AAPL). The project primarily utilizes the closing prices of each day, structured into sliding windows that represent the previous 7 days. These rolling windows are used as input features to predict the closing price of the next day. This approach enables the model to learn short-term temporal dependencies in stock movements.
 
 The notebook includes data fetching, preprocessing, model training, evaluation, and visualization of predictions versus actual prices. In addition to numerical accuracy, the model also attempts to capture directional movement trends, comparing whether the predicted price correctly signals a rise or fall in stock price compared to the previous day.
 
-## 🔍 Methods and Models
+## Methods and Models
 
 Two primary regression models were implemented to predict next-day closing prices:
 
@@ -18,7 +18,7 @@ Two primary regression models were implemented to predict next-day closing price
 
 After training the models, predictions were compared to actual outcomes using standard regression evaluation metrics. The project includes visual plots to show the alignment between predicted and actual stock prices, highlighting both the accuracy and the directionality of the forecasts.
 
-## 📊 Evaluation Metrics
+## Evaluation Metrics
 
 To assess model performance, the following metrics were used:
 
@@ -29,7 +29,7 @@ To assess model performance, the following metrics were used:
 
 Findings indicated that while raw price prediction is inherently noisy due to market volatility, the models showed meaningful success in identifying short-term trend directions, with the Random Forest model outperforming the linear baseline in both accuracy and interpretability.
 
-## 🧰 Libraries Used
+## Libraries Used
 
 - `numpy`, `pandas` – numerical and tabular data manipulation
 - `matplotlib.pyplot` – visualization of predicted vs. actual prices
